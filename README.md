@@ -7,7 +7,7 @@ IBM
 ## 👥 Team
 
 * **Team Leader:** Urs Nicolas Robert
-  * URS NICOLAS ROBERT - [nicolas.urs04@e-uvt.ro](mailto:nicolas.urs04@e-uvt.ro)
+  * Urs Nicolas Robert - [nicolas.urs04@e-uvt.ro](mailto:nicolas.urs04@e-uvt.ro)
 
 * **Team Members:**
 
