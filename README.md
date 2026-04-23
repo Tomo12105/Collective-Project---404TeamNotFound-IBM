@@ -1,5 +1,3 @@
-#Project Title
-
 **AutoMinutes – AI Meeting Agent**
 
 ## 🏢 Company
