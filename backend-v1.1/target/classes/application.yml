@@ -17,8 +17,9 @@ spring:
 app:
   jwt:
     secret: ${JWT_SECRET:change-me-change-me-change-me-change-me-change-me-change-me-change-me-32bytes}
-    expirationMinutes: ${JWT_EXP_MINUTES:10080} # 7 days
+    expirationMinutes: ${JWT_EXP_MINUTES:10080}
 
 logging:
   level:
-    org.hibernate.SQL: ${HIBERNATE_SQL_LOG_LEVEL:warn}
+    org.springframework.security: warn
+    org.hibernate.SQL: warn

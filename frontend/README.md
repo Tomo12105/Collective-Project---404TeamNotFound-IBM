@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# AutoMinutes — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript frontend for the AutoMinutes AI meeting minutes tool.
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env   # set VITE_API_BASE_URL
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server |
+| `npm run build` | Production build |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Run Prettier |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Stack
+React 18, TypeScript, Vite, Tailwind CSS, Zustand, React Router v6, Axios, React Hook Form, AG Grid, Lucide React, date-fns, React Hot Toast
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Structure
 ```
+src/
+  components/atoms/       Button, Input, Textarea, Select, Badge, Spinner
+  components/molecules/   Modal, ConfirmDialog, MeetingCard
+  components/organisms/   CreateMeetingModal
+  components/templates/   AppLayout
+  pages/                  MeetingsPage, MeetingDetailPage, ActionItemsPage
+  services/               api, meetings, transcripts, attendees, actionItems
+  store/                  useAppStore (Zustand)
+  hooks/                  useMeetings, useTheme
+  types/                  all TypeScript interfaces
+  utils/                  format helpers
+  styles/                 globals.css (design tokens)
+```
+
+## Phases
+| Phase | What | Status |
+|---|---|---|
+| 1 | Foundation, config, design system, routing | Done |
+| 2 | Meeting list, CRUD, search, filter, sort | Done |
+| 3 | Transcript upload, attendee management | Next |
+| 4 | AI processing + results display | Planned |
+| 5 | Action items (AG Grid, inline editing) | Planned |
+| 6 | Polish, skeletons, export | Planned |

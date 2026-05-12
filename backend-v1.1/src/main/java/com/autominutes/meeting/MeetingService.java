@@ -21,7 +21,10 @@ public class MeetingService {
         this.taskRepository = taskRepository;
         this.currentUserService = currentUserService;
     }
-
+    @Transactional
+    public Meeting save(Meeting meeting) {
+        return meetingRepository.save(meeting);
+    }
     @Transactional
     public Meeting create(MeetingDtos.CreateMeetingRequest req) {
         Meeting m = new Meeting();

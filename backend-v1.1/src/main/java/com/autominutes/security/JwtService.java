@@ -26,8 +26,8 @@ public class JwtService {
         Instant now = Instant.now();
         Instant exp = now.plus(props.getExpirationMinutes(), ChronoUnit.MINUTES);
         return Jwts.builder()
-                .subject(subject)
-                .claims(claims)
+                .claims(claims)      // claims first
+                .subject(subject)    // subject after so it's never overwritten
                 .issuedAt(Date.from(now))
                 .expiration(Date.from(exp))
                 .signWith(key)
